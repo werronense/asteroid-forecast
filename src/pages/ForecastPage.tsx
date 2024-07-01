@@ -1,5 +1,6 @@
 import "./ForecastPage.scss";
 import { getDate, daysToMilliseconds } from "../utils/calculate-dates";
+import ForecastDay from "../components/ForecastDay";
 
 const ForecastPage = () => {
   return (
@@ -12,9 +13,10 @@ const ForecastPage = () => {
       </p>
       <div className="forecast__week">
         {[...Array(7).keys()].map((value) => (
-          <section className="forecast__day" key={daysToMilliseconds(value)}>
-            <h3>{getDate(value).toDateString()}</h3>
-          </section>
+          <ForecastDay
+            milliseconds={daysToMilliseconds(value)}
+            heading={getDate(value).toDateString()}
+          />
         ))}
       </div>
     </div>
