@@ -1,0 +1,19 @@
+@use "../styles/partials/breakpoint-mixins" as *;
+
+.forecast {
+  &__heading {
+    margin: 0.75rem 0;
+
+    @include tablet {
+      margin: 1rem 0;
+    }
+  }
+
+  &__date-range {
+    margin: 0.5rem 0;
+
+    @include tablet {
+        margin: 1rem 0;
+    }
+  }
+}
