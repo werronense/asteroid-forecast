@@ -9,6 +9,13 @@ body {
 }
 
 // import fonts
+// display fonts
+@font-face {
+  font-family: "Racing Sans One";
+  font-weight: 400;
+  src: url("./assets/fonts/RacingSansOne-Regular.ttf") format("truetype");
+}
+
 // body fonts
 @font-face {
   font-family: "Open Sans";
@@ -37,4 +44,9 @@ body {
 // typography
 body {
   font-family: "Open Sans", Arial, sans-serif;
+}
+
+h1 {
+  font-family: "Racing Sans One", "Open Sans", Arial, sans-serif;
+  font-weight: 400;
 }
