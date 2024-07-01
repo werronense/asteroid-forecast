@@ -1,13 +1,9 @@
-const weekOfMilliseconds: number = 7 * 24 * 60 * 60 * 1000;
-
-const getStartDate = (): Date => {
-  // today's date
-  return new Date(Date.now());
+const daysToMilliseconds = (days: number): number => {
+  return days * (24 * 60 * 60 * 1000);
 };
 
-const getEndDate = (): Date => {
-  // one week from today's date
-  return new Date(Date.now() + weekOfMilliseconds);
+const getDate = (daysFromToday: number): Date => {
+  return new Date(Date.now() + daysToMilliseconds(daysFromToday));
 };
 
-export { getStartDate, getEndDate };
+export { daysToMilliseconds, getDate };
