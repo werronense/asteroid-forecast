@@ -1,6 +1,10 @@
 @use "../styles/partials/variables" as *;
 
 .site-header {
+  &__logo {
+    max-width: 3.5rem;
+  }
+
   &__heading {
     font-family: "Racing Sans One", "Open Sans", Arial, sans-serif;
     font-weight: 400;
