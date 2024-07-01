@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 // Global resets
 * {
   box-sizing: border-box;
@@ -43,10 +45,15 @@ body {
 
 // typography
 body {
+  color: $primary-text;
   font-family: "Open Sans", Arial, sans-serif;
 }
 
 h1 {
+  border-bottom: 1px solid $orange;
+  color: $red;
+  display: inline-block;
   font-family: "Racing Sans One", "Open Sans", Arial, sans-serif;
   font-weight: 400;
+  width: auto;
 }
