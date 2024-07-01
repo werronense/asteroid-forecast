@@ -1,7 +1,7 @@
 import "./AsteroidPage.scss";
 
 const AsteroidPage = () => {
-  return <p>Asteroid Details page</p>;
+  return <h1>Asteroid Details</h1>;
 };
 
 export default AsteroidPage;
