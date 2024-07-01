@@ -8,17 +8,19 @@ const Header = () => {
 
   return (
     <header className="site-header">
-      <img
-        src={asteroidLogo}
-        alt="asteroid forecast logo"
-        className="site-header__logo"
-        onClick={() => navigate("/")}
-      />
-      <h2 className="site-header__heading">
-        <Link to="/" className="site-header__link">
-          Asteroid Forecast
-        </Link>
-      </h2>
+      <div className="site-header__content-container">
+        <img
+          src={asteroidLogo}
+          alt="asteroid forecast logo"
+          className="site-header__logo"
+          onClick={() => navigate("/")}
+        />
+        <h2 className="site-header__heading">
+          <Link to="/" className="site-header__link">
+            Asteroid Forecast
+          </Link>
+        </h2>
+      </div>
     </header>
   );
 };

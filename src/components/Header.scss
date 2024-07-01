@@ -1,6 +1,27 @@
 @use "../styles/partials/variables" as *;
+@use "../styles/partials/breakpoint-mixins" as *;
+@use "../styles/partials/flex-mixin" as *;
 
 .site-header {
+  padding: 0.5rem 0;
+
+  @include tablet {
+    padding: 1rem 0;
+  }
+
+  &__content-container {
+    @include flex($align: flex-end);
+
+    @include tablet {
+      margin: 0 auto;
+      max-width: 700px;
+    }
+
+    @include desktop {
+      max-width: 1080px;
+    }
+  }
+
   &__logo {
     max-width: 3.5rem;
   }
@@ -8,6 +29,7 @@
   &__heading {
     font-family: "Racing Sans One", "Open Sans", Arial, sans-serif;
     font-weight: 400;
+    margin: 0 0 0.75rem 0;
   }
 
   &__link {
