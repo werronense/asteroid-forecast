@@ -1,0 +1,59 @@
+@use "./variables" as *;
+
+// Global resets
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// import fonts
+// display fonts
+@font-face {
+  font-family: "Racing Sans One";
+  font-weight: 400;
+  src: url("./assets/fonts/RacingSansOne-Regular.ttf") format("truetype");
+}
+
+// body fonts
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 300;
+  src: url("./assets/fonts/OpenSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 400;
+  src: url("./assets/fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 500;
+  src: url("./assets/fonts/OpenSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 700;
+  src: url("./assets/fonts/OpenSans-Bold.ttf") format("truetype");
+}
+
+// typography
+body {
+  color: $primary-text;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+h1 {
+  border-bottom: 1px solid $orange;
+  color: $red;
+  display: inline-block;
+  font-family: "Racing Sans One", "Open Sans", Arial, sans-serif;
+  font-weight: 400;
+  width: auto;
+}

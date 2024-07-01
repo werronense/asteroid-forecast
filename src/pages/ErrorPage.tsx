@@ -9,7 +9,7 @@ interface ErrorPageProps {
 const ErrorPage: React.FC<ErrorPageProps> = ({ errorCode, errorMessage }) => {
   return (
     <>
-      <p>{errorCode} Error</p>
+      <h1>{errorCode} Error</h1>
       <p>{errorMessage}</p>
     </>
   );
