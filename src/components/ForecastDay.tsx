@@ -3,16 +3,12 @@ import React from "react";
 import "./ForecastDay.scss";
 
 interface ForecastDayProps {
-  milliseconds: number;
   heading: string;
 }
 
-const ForecastDay: React.FC<ForecastDayProps> = ({
-  milliseconds,
-  heading,
-}) => {
+const ForecastDay: React.FC<ForecastDayProps> = ({ heading }) => {
   return (
-    <section className="forecast-day" key={milliseconds}>
+    <section className="forecast-day">
       <h3 className="forecast-day__heading">{heading}</h3>
       {/* todo: insert each AsteroidSummary */}
     </section>

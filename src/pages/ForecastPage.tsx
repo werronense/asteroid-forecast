@@ -14,7 +14,7 @@ const ForecastPage = () => {
       <div className="forecast__week">
         {[...Array(7).keys()].map((value) => (
           <ForecastDay
-            milliseconds={daysToMilliseconds(value)}
+            key={daysToMilliseconds(value)}
             heading={getDate(value).toDateString()}
           />
         ))}
