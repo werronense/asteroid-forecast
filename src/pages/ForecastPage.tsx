@@ -52,7 +52,7 @@ interface Asteroid {
 
 // contract interface exported for use in App.tsx
 export interface DailyForecast {
-  date: Date;
+  date: string;
   asteroids: Asteroid[];
 }
 

@@ -20,18 +20,18 @@ const App: React.FC = () => {
         const response = await axios.get(`${VITE_API_BASE_URL}/asteroids`);
 
         const dateKeys = Object.keys(response.data.near_earth_objects);
-        const forecastData = dateKeys.sort().map(key => {
+        const forecastData = dateKeys.sort().map((key) => {
           return {
-            date: new Date(key),
-            asteroids: [...response.data.near_earth_objects[key]]
-          }
+            date: key,
+            asteroids: [...response.data.near_earth_objects[key]],
+          };
         });
 
         setForecast(forecastData);
       } catch (err) {
         console.error("GET request to /asteroids endpoint failed: ", err);
       }
-    }
+    };
 
     fetchAsteroids();
   }, []);
@@ -49,6 +49,6 @@ const App: React.FC = () => {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
