@@ -68,7 +68,7 @@ const ForecastPage: React.FC<ForecastProps> = ({ forecast }) => {
       <h1 className="forecast__heading">Asteroid Forecast</h1>
       <p className="forecast__date-range">
         {`${getDate(0).toLocaleDateString()} - ${getDate(
-          7
+          6
         ).toLocaleDateString()}`}
       </p>
       <div className="forecast__week">
