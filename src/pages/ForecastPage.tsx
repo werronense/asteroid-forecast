@@ -37,9 +37,10 @@ interface EstimatedDiameter {
   miles: MinMax;
 }
 
-interface Asteroid {
+// export for use in ForecastDay.tsx
+export interface Asteroid {
   absolute_magnitude_h: number;
-  close_approach_data: CloseApproachData;
+  close_approach_data: CloseApproachData[];
   estimated_diameter: EstimatedDiameter;
   id: string;
   is_potentially_hazardous_asteroid: boolean;
@@ -62,20 +63,20 @@ interface ForecastProps {
 }
 
 const ForecastPage: React.FC<ForecastProps> = ({ forecast }) => {
-  console.log(forecast);
   return (
     <div className="forecast">
       <h1 className="forecast__heading">Asteroid Forecast</h1>
       <p className="forecast__date-range">
         {`${getDate(0).toLocaleDateString()} - ${getDate(
-          6
+          7
         ).toLocaleDateString()}`}
       </p>
       <div className="forecast__week">
-        {[...Array(7).keys()].map((value) => (
+        {forecast?.map((day, i) => (
           <ForecastDay
-            key={daysToMilliseconds(value)}
-            heading={getDate(value).toDateString()}
+            key={daysToMilliseconds(i)}
+            heading={getDate(i).toDateString()}
+            asteroids={day.asteroids}
           />
         ))}
       </div>
