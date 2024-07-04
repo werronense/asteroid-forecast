@@ -6,7 +6,7 @@
   padding: 0.5rem 0;
 
   @include tablet {
-    padding: 1rem 0;
+    padding: $small-pad 0;
   }
 
   &__content-container {
@@ -14,11 +14,11 @@
 
     @include tablet {
       margin: 0 auto;
-      max-width: 700px;
+      max-width: $medium-container-max-width;
     }
 
     @include desktop {
-      max-width: 1080px;
+      max-width: $large-container-max-width;
     }
   }
 

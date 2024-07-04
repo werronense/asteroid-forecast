@@ -1,11 +1,14 @@
 @use "../styles/partials/breakpoint-mixins" as *;
+@use "../styles/partials/variables" as *;
 
 .forecast {
+  padding: $small-pad;
+
   &__heading {
-    margin: 0.75rem 0;
+    margin: $small-margin 0;
 
     @include tablet {
-      margin: 1rem 0;
+      margin: $med-margin 0;
     }
   }
 
@@ -13,7 +16,7 @@
     margin: 0.5rem 0;
 
     @include tablet {
-        margin: 1rem 0;
+        margin: $med-margin 0;
     }
   }
 }
