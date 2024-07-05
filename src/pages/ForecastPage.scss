@@ -2,7 +2,19 @@
 @use "../styles/partials/variables" as *;
 
 .forecast {
-  padding: $small-pad;
+  padding: 0 $small-pad;
+
+  &__container {
+    @include tablet {
+      margin: 0 auto;
+      max-width: $medium-container-max-width;
+      padding: $small-pad;
+    }
+
+    @include desktop {
+      max-width: $large-container-max-width;
+    }
+  }
 
   &__heading {
     margin: $small-margin 0;
