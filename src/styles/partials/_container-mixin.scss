@@ -1,0 +1,14 @@
+@use "./breakpoint-mixins" as *;
+@use "./variables" as *;
+
+@mixin page-container {
+  @include tablet {
+    margin: 0 auto;
+    max-width: $medium-container-max-width;
+    padding: 0 $small-pad;
+  }
+
+  @include desktop {
+    max-width: $large-container-max-width;
+  }
+}

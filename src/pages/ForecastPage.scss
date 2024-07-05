@@ -1,19 +1,12 @@
 @use "../styles/partials/breakpoint-mixins" as *;
 @use "../styles/partials/variables" as *;
+@use "../styles/partials/container-mixin" as *;
 
 .forecast {
   padding: 0 $small-pad;
 
   &__container {
-    @include tablet {
-      margin: 0 auto;
-      max-width: $medium-container-max-width;
-      padding: $small-pad;
-    }
-
-    @include desktop {
-      max-width: $large-container-max-width;
-    }
+    @include page-container;
   }
 
   &__heading {
