@@ -32,5 +32,10 @@
 
   &__text {
     margin: 0.5rem 0;
+
+    &--danger {
+      color: $red;
+      font-weight: 500;
+    }
   }
 }
