@@ -85,9 +85,12 @@ const ForecastPage: React.FC<ForecastProps> = ({ forecast }) => {
             ).toLocaleDateString()}`}
           </p>
           <h2 className="forecast__sub-heading">Summary</h2>
-          <p>
-            This week {allAsteroids.length} asteroids will approach the earth,
-            including {hazardousAsteroids.length} potentially dangerous ones.
+          <p className="forecast__text">
+            This week {allAsteroids.length} asteroids will pass the earth,{" "}
+            <span className="forecast__text--danger">
+              including {hazardousAsteroids.length} potentially dangerous ones
+            </span>
+            .
           </p>
         </div>
         <div className="forecast__week">
