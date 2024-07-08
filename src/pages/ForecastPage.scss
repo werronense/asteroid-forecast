@@ -24,4 +24,13 @@
         margin: $med-margin 0;
     }
   }
+
+  &__week {
+    max-width: 400px;
+    margin: 0 auto;
+    
+    @include tablet {
+      margin: 2rem auto 0 auto;
+    }
+  }
 }
