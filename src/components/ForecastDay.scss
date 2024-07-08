@@ -2,23 +2,32 @@
 @use "../styles/partials/breakpoint-mixins" as *;
 
 .forecast-day {
-  background-color: $white;
-  border: 1px solid $blue;
-  border-radius: 3px;
-  box-shadow: 0 0 0.5rem $blue;
+  // background-color: $white;
+  // border: 1px solid $blue;
+  // border-radius: 3px;
+  // box-shadow: 0 0 0.5rem $blue;
   margin-bottom: 2rem;
-  padding: 0.5rem 1rem 0.75rem 1rem;
+  // padding: 0.5rem 1rem 0.75rem 1rem;
 
   @include tablet {
-    padding: 1rem 2rem 1.25rem 2rem;
+    // padding: 1rem 2rem 1.25rem 2rem;
   }
 
   &__heading {
+    color: $white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 0.9rem;
-    font-weight: 600;
-    margin: 0.75rem 0 0.5rem 0;
+    font-weight: 400;
+    margin: 0.75rem 0 0.5rem 0.25rem;
     text-transform: uppercase;
+  }
+
+  &__asteroid-counts {
+    background-color: $white;
+    border: 1px solid $blue;
+    border-radius: 3px;
+    box-shadow: 0 0 0.5rem $blue;
+    padding: 0.25rem 0.75rem;
   }
 
   &__text {
