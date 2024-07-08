@@ -1,7 +1,20 @@
+@use "../styles/partials/variables" as *;
+
 .forecast-day {
+  border: 1px solid $blue;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem 0.75rem 1rem;
+
   &__heading {
-    font-family: "Racing Sans One", "Open Sans", Arial, sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0.75rem 0 0.5rem 0;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin: 0.5rem 0;
   }
 }

@@ -13,13 +13,13 @@ const ForecastDay: React.FC<ForecastDayProps> = ({ heading, asteroids }) => {
     <section className="forecast-day">
       <h3 className="forecast-day__heading">{heading}</h3>
       <div className="forecast-day__asteroid-counts">
-        <p>{`${
+        <p className="forecast-day__text">{`${
           asteroids.filter(
             (asteroid) =>
               asteroid.close_approach_data[0].orbiting_body === "Earth"
           ).length
         } asteroids near earth today`}</p>
-        <p>{`${
+        <p className="forecast-day__text">{`${
           asteroids.filter(
             (asteroid) =>
               asteroid.is_potentially_hazardous_asteroid &&
