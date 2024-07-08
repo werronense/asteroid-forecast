@@ -1,6 +1,7 @@
+import React from "react";
 import "./AsteroidPage.scss";
 
-const AsteroidPage = () => {
+const AsteroidPage: React.FC = () => {
   return <h1>Asteroid Details</h1>;
 };
 
