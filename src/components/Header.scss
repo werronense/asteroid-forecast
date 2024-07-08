@@ -1,0 +1,40 @@
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/breakpoint-mixins" as *;
+@use "../styles/partials/flex-mixin" as *;
+
+.site-header {
+  background-color: $white;
+  padding: 0.5rem 0;
+
+  @include tablet {
+    padding: $small-pad 0;
+  }
+
+  &__content-container {
+    @include flex($align: flex-end);
+
+    @include tablet {
+      margin: 0 auto;
+      max-width: $medium-container-max-width;
+    }
+
+    @include desktop {
+      max-width: $large-container-max-width;
+    }
+  }
+
+  &__logo {
+    max-width: 3.5rem;
+  }
+
+  &__heading {
+    font-family: "Racing Sans One", "Open Sans", Arial, sans-serif;
+    font-weight: 400;
+    margin: 0 0 0.75rem 0;
+  }
+
+  &__link {
+    color: $primary-text;
+    text-decoration: none;
+  }
+}
