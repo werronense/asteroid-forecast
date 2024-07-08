@@ -22,7 +22,7 @@ interface CloseApproachData {
   epoch_date_close_approach: number;
   miss_distance: MissDistance;
   orbiting_body: string;
-  relative_velocity: RelativeVelocity; 
+  relative_velocity: RelativeVelocity;
 }
 
 interface MinMax {
@@ -63,6 +63,17 @@ interface ForecastProps {
 }
 
 const ForecastPage: React.FC<ForecastProps> = ({ forecast }) => {
+  // create an array of all asteroids
+  const allAsteroids = forecast.reduce(
+    (a, b) => a.concat(b.asteroids),
+    [] as Asteroid[]
+  );
+
+  // create an array of all hazardouds asteroids
+  const hazardousAsteroids = allAsteroids.filter(
+    (asteroid) => asteroid.is_potentially_hazardous_asteroid === true
+  );
+
   return (
     <main className="forecast">
       <div className="forecast__container">
@@ -72,6 +83,11 @@ const ForecastPage: React.FC<ForecastProps> = ({ forecast }) => {
             {`${getDate(0).toLocaleDateString()} - ${getDate(
               6
             ).toLocaleDateString()}`}
+          </p>
+          <h2 className="forecast__sub-heading">Summary</h2>
+          <p>
+            This week {allAsteroids.length} asteroids will approach the earth,
+            including {hazardousAsteroids.length} potentially dangerous ones.
           </p>
         </div>
         <div className="forecast__week">
