@@ -66,12 +66,14 @@ const ForecastPage: React.FC<ForecastProps> = ({ forecast }) => {
   return (
     <main className="forecast">
       <div className="forecast__container">
-        <h1 className="forecast__heading">Asteroid Forecast</h1>
-        <p className="forecast__date-range">
-          {`${getDate(0).toLocaleDateString()} - ${getDate(
-            6
-          ).toLocaleDateString()}`}
-        </p>
+        <div className="forecast__summary">
+          <h1 className="forecast__heading">Forecast</h1>
+          <p className="forecast__date-range">
+            {`${getDate(0).toLocaleDateString()} - ${getDate(
+              6
+            ).toLocaleDateString()}`}
+          </p>
+        </div>
         <div className="forecast__week">
           {forecast?.map((day, i) => (
             <ForecastDay
