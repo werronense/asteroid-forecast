@@ -3,6 +3,7 @@
 @use "../styles/partials/flex-mixin" as *;
 
 .site-header {
+  background-color: $white;
   padding: 0.5rem 0;
 
   @include tablet {
