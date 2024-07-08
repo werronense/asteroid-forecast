@@ -86,7 +86,7 @@ const ForecastPage: React.FC<ForecastProps> = ({ forecast }) => {
           </p>
           <h2 className="forecast__sub-heading">Summary</h2>
           <p className="forecast__text">
-            This week {allAsteroids.length} asteroids will come close to earth,{" "}
+            This week {allAsteroids.length} asteroids will approach earth,{" "}
             <span className="forecast__text--danger">
               including {hazardousAsteroids.length} potentially dangerous ones
             </span>
