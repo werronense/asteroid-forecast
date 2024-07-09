@@ -1,9 +1,13 @@
 import "./ForecastList.scss";
 import { daysToMilliseconds, getDate } from "../utils/calculate-dates";
-import { ForecastProps } from "../pages/ForecastPage";
+import { DailyForecast } from "../pages/ForecastPage";
 import { ForecastItem } from "./ForecastItem";
 
-export const ForecastList: React.FC<ForecastProps> = ({ forecast }) => {
+interface ForecastListProps {
+  forecast: DailyForecast[];
+}
+
+export const ForecastList: React.FC<ForecastListProps> = ({ forecast }) => {
   return (
     <div className="forecast-list">
       {forecast?.map((day, i) => (

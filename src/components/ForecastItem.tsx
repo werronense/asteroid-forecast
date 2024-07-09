@@ -1,5 +1,5 @@
 import "./ForecastItem.scss";
-import { Asteroid } from "../pages/ForecastPage";
+import { Asteroid } from "../interfaces/asteroid";
 
 interface ForecastItemProps {
   heading: string;
