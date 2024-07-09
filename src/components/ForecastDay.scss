@@ -2,16 +2,7 @@
 @use "../styles/partials/breakpoint-mixins" as *;
 
 .forecast-day {
-  // background-color: $white;
-  // border: 1px solid $blue;
-  // border-radius: 3px;
-  // box-shadow: 0 0 0.5rem $blue;
   margin-bottom: 2rem;
-  // padding: 0.5rem 1rem 0.75rem 1rem;
-
-  @include tablet {
-    // padding: 1rem 2rem 1.25rem 2rem;
-  }
 
   &__heading {
     color: $white;
