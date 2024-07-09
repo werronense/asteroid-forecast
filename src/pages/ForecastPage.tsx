@@ -1,7 +1,7 @@
 import React from "react";
 import "./ForecastPage.scss";
-import { getDate, daysToMilliseconds } from "../utils/calculate-dates";
-import ForecastDay from "../components/ForecastDay";
+import { getDate } from "../utils/calculate-dates";
+import { ForecastList } from "../components/ForecastList";
 
 interface MissDistance {
   astronomical: string;
@@ -37,7 +37,6 @@ interface EstimatedDiameter {
   miles: MinMax;
 }
 
-// export for use in ForecastDay.tsx
 export interface Asteroid {
   absolute_magnitude_h: number;
   close_approach_data: CloseApproachData[];
@@ -58,7 +57,7 @@ export interface DailyForecast {
 }
 
 // interface to define component props
-interface ForecastProps {
+export interface ForecastProps {
   forecast: DailyForecast[];
 }
 
@@ -93,15 +92,7 @@ const ForecastPage: React.FC<ForecastProps> = ({ forecast }) => {
             .
           </p>
         </div>
-        <div className="forecast__week">
-          {forecast?.map((day, i) => (
-            <ForecastDay
-              key={daysToMilliseconds(i)}
-              heading={getDate(i).toDateString()}
-              asteroids={day.asteroids}
-            />
-          ))}
-        </div>
+        <ForecastList forecast={forecast} />
       </div>
     </main>
   );
