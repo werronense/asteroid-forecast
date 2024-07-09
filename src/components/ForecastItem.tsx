@@ -1,5 +1,6 @@
-import "./ForecastItem.scss";
 import { Asteroid } from "../interfaces/asteroid";
+import { AsteroidList } from "./AsteroidList";
+import "./ForecastItem.scss";
 
 interface ForecastItemProps {
   heading: string;
@@ -24,6 +25,7 @@ export const ForecastItem: React.FC<ForecastItemProps> = ({
             {hazardousAsteroids.length} of them dangerous
           </p>
         )}
+        <AsteroidList asteroids={asteroids} />
       </div>
     </article>
   );
