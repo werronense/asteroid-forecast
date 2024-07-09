@@ -8,7 +8,7 @@ interface AsteroidListProps {
 
 export const AsteroidList: React.FC<AsteroidListProps> = ({ asteroids }) => {
   return (
-    <ul>
+    <ul className="asteroid-list">
       {asteroids?.map((asteroid) => {
         return <AsteroidItem key={asteroid.id} asteroid={asteroid} />;
       })}

@@ -1,0 +1,9 @@
+@use "../styles/partials/variables" as *;
+
+.asteroid-item {
+  margin-bottom: 0.5rem;
+
+  &--danger {
+    color: $red;
+  }
+}

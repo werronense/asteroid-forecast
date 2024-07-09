@@ -6,6 +6,13 @@ interface AsteroidProps {
 }
 
 export const AsteroidItem: React.FC<AsteroidProps> = ({ asteroid }) => {
-  // todo: implement asteroid item/return an li
-  return <li>{asteroid.name}</li>;
+  const isDangerous = asteroid.is_potentially_hazardous_asteroid;
+
+  return (
+    <li
+      className={`asteroid-item ${isDangerous ? "asteroid-item--danger" : ""}`}
+    >
+      {asteroid.name}
+    </li>
+  );
 };
