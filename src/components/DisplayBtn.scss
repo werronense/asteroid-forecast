@@ -1,0 +1,11 @@
+@use "../styles/partials/variables" as *;
+
+.display-btn {
+  background-color: $white;
+  border: none;
+  padding: 0;
+
+  &--open {
+    transform: rotate(180deg);
+  }
+}

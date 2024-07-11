@@ -1,4 +1,4 @@
-import { FaChevronCircleDown } from "react-icons/fa";
+import { DisplayBtn } from "./DisplayBtn";
 import { Asteroid } from "../interfaces/asteroid";
 import { AsteroidList } from "./AsteroidList";
 import "./ForecastItem.scss";
@@ -30,7 +30,7 @@ export const ForecastItem: React.FC<ForecastItemProps> = ({
             )}
           </div>
           <div className="forecast-item__btn-container">
-            <FaChevronCircleDown />
+            <DisplayBtn />
           </div>
         </section>
         <section className="forecast-item__list forecast-item__list--closed">
