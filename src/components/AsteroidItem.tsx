@@ -1,5 +1,6 @@
 import { Asteroid } from "../interfaces/asteroid";
-import { FaMeteor } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import { FaMeteor, FaChevronRight } from "react-icons/fa6";
 import "./AsteroidItem.scss";
 
 interface AsteroidProps {
@@ -11,9 +12,11 @@ export const AsteroidItem: React.FC<AsteroidProps> = ({ asteroid }) => {
 
   return (
     <li
-      className={`asteroid-item ${isDangerous ? "asteroid-item--danger" : ""}`}
+      className={"asteroid-item"}
     >
-      <FaMeteor /> {asteroid.name}
+      <Link to={`/asteroids/${asteroid.id}`} className={`asteroid-item__link ${isDangerous ? "asteroid-item__link--danger" : ""}`}>
+        <span className="asteroid-item__group"><FaMeteor /> {asteroid.name}</span> <FaChevronRight />
+      </Link>
     </li>
   );
 };
