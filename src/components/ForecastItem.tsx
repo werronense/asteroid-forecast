@@ -1,3 +1,4 @@
+import { FaChevronCircleDown } from "react-icons/fa";
 import { Asteroid } from "../interfaces/asteroid";
 import { AsteroidList } from "./AsteroidList";
 import "./ForecastItem.scss";
@@ -28,9 +29,11 @@ export const ForecastItem: React.FC<ForecastItemProps> = ({
               </p>
             )}
           </div>
-          {/* todo: add icon button */}
+          <div className="forecast-item__btn-container">
+            <FaChevronCircleDown />
+          </div>
         </section>
-        <section className="forecast-item__list">
+        <section className="forecast-item__list forecast-item__list--closed">
           <AsteroidList asteroids={asteroids} />
         </section>
       </div>
