@@ -1,0 +1,14 @@
+@use "../styles/partials/variables" as *;
+
+.display-btn {
+  background-color: $white;
+  border: none;
+  border-radius: 50%;
+  line-height: 0.7;
+  padding: 0;
+  transition: all 0.15s;
+
+  &--closed {
+    transform: rotate(-180deg);
+  }
+}

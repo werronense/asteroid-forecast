@@ -1,0 +1,23 @@
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/flex-mixin" as *;
+
+.asteroid-item {
+  @include flex;
+  margin-bottom: 0.6rem;
+
+  &__link {
+    @include flex($align: center);
+    gap: 0.25rem;
+    color: $primary-text;
+    text-decoration: none;
+
+    &--danger {
+      color: $red;
+    }
+  }
+
+  &__group {
+    @include flex;
+    gap: 1rem;
+  }
+}
