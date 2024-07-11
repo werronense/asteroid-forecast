@@ -1,4 +1,5 @@
 import { Asteroid } from "../interfaces/asteroid";
+import { FaMeteor } from "react-icons/fa6";
 import "./AsteroidItem.scss";
 
 interface AsteroidProps {
@@ -12,7 +13,7 @@ export const AsteroidItem: React.FC<AsteroidProps> = ({ asteroid }) => {
     <li
       className={`asteroid-item ${isDangerous ? "asteroid-item--danger" : ""}`}
     >
-      {asteroid.name}
+      <FaMeteor /> {asteroid.name}
     </li>
   );
 };

@@ -1,6 +1,9 @@
 @use "../styles/partials/variables" as *;
+@use "../styles/partials/flex-mixin" as *;
 
 .asteroid-item {
+  @include flex;
+  gap: 0.75rem;
   margin-bottom: 0.5rem;
 
   &--danger {
