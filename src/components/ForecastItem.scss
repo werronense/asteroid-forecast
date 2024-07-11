@@ -41,6 +41,8 @@
   }
 
   &__list {
+    transition: all 2s;
+
     &--closed {
       display: none;
     }

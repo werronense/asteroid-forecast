@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { DisplayBtn } from "./DisplayBtn";
 import { Asteroid } from "../interfaces/asteroid";
 import { AsteroidList } from "./AsteroidList";
@@ -12,6 +13,12 @@ export const ForecastItem: React.FC<ForecastItemProps> = ({
   heading,
   asteroids,
 }) => {
+  const [isListClosed, setIsListClosed] = useState(true);
+
+  const toggleClosed = (): void => {
+    setIsListClosed(!isListClosed);
+  }
+
   const hazardousAsteroids = asteroids.filter(
     (asteroid) => asteroid.is_potentially_hazardous_asteroid
   );
@@ -30,10 +37,14 @@ export const ForecastItem: React.FC<ForecastItemProps> = ({
             )}
           </div>
           <div className="forecast-item__btn-container">
-            <DisplayBtn />
+            <DisplayBtn clickHandler={toggleClosed} closed={isListClosed} />
           </div>
         </section>
-        <section className="forecast-item__list forecast-item__list--closed">
+        <section
+          className={`forecast-item__list ${
+            isListClosed ? "forecast-item__list--closed" : ""
+          }`}
+        >
           <AsteroidList asteroids={asteroids} />
         </section>
       </div>
