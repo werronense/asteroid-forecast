@@ -3,6 +3,8 @@
 .display-btn {
   background-color: $white;
   border: none;
+  border-radius: 50%;
+  line-height: 0.7;
   padding: 0;
 
   &--open {
