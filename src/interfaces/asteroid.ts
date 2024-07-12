@@ -1,3 +1,5 @@
+import { OrbitalData } from "./orbital-data";
+
 // definition of the asteroid object returned from the API
 
 interface MissDistance {
@@ -45,4 +47,6 @@ interface MissDistance {
     name: string;
     nasa_jpl_url: string;
     neo_reference_id: string;
+    designation?: string;
+    orbital_data?: OrbitalData;
   }
