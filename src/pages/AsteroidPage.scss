@@ -23,9 +23,18 @@
 
   &__sub-heading {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 600;
     text-transform: uppercase;
-    margin-top: 1.25rem;
+    margin: 1.25rem 0 1.75rem;
+  }
+
+  &__text {
+    margin: 0.5rem 0;
+
+    &--danger {
+      color: $red;
+      font-weight: 500;
+    }
   }
 }
