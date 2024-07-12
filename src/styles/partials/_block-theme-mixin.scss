@@ -1,0 +1,8 @@
+@use "./variables" as *;
+
+@mixin block-theme-light {
+  background-color: $white;
+  border: 1px solid $blue;
+  border-radius: 3px;
+  box-shadow: 0 0 0.5rem $blue;
+}
