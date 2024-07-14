@@ -7,7 +7,7 @@ interface ApproachItemProps {
 
 export const ApproachItem: React.FC<ApproachItemProps> = ({ approach }) => {
   return (
-    <li key={approach.close_approach_date}>
+    <li>
       <span>{approach.close_approach_date}</span>
       <span>{approach.miss_distance.kilometers}</span>
     </li>

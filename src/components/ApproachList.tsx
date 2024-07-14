@@ -10,8 +10,8 @@ interface ApproachListProps {
 export const ApproachList: React.FC<ApproachListProps> = ({ approachData }) => {
   return (
     <ul className="approach-list">
-      {approachData.map((approach) => (
-        <ApproachItem key={approach.close_approach_date} approach={approach} />
+      {approachData.map((approach, i) => (
+        <ApproachItem key={i} approach={approach} />
       ))}
     </ul>
   );
