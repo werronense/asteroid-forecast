@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { FaTriangleExclamation } from "react-icons/fa6";
 import axios from "axios";
 import { getDate } from "../utils/calculate-dates";
+import { formatMillionsOfKms } from "../utils/format-distances";
 import { Asteroid, CloseApproachData } from "../interfaces/asteroid";
 import { Approaches } from "../components/Approaches";
 
@@ -103,10 +104,7 @@ const AsteroidPage: React.FC = () => {
                 </p>
                 <p className="asteroid-page__text">
                   <span className="bold">Approach distance</span>: <br />
-                  {(+closeApproach.miss_distance.kilometers / 1000000).toFixed(
-                    2
-                  )}{" "}
-                  million kilometers
+                  {formatMillionsOfKms(closeApproach.miss_distance.kilometers)}
                 </p>
               </>
             )}
