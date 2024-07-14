@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CloseApproachData } from "../interfaces/asteroid";
 import { DisplayBtn } from "./DisplayBtn";
 import "./Approaches.scss";
@@ -14,18 +14,24 @@ export const Approaches: React.FC<ApproachesProps> = ({
   heading,
   approachData,
 }) => {
+  const [isListClosed, setIsListClosed] = useState(true);
+
+  const toggleClosed = (): void => {
+    setIsListClosed((isListClosed) => !isListClosed);
+  }
+
   return (
     <div className="approaches">
       <div className="approaches__group">
         <h3 className="approaches__heading">{heading}</h3>
         <div className="approaches__btn-container">
           <DisplayBtn
-            closed={false}
-            clickHandler={() => console.log("click")}
+            closed={isListClosed}
+            clickHandler={toggleClosed}
           />
         </div>
       </div>
-      <ApproachList approachData={approachData} />
+      <ApproachList approachData={approachData} closed={isListClosed} />
     </div>
   );
 };
