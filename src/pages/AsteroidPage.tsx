@@ -2,14 +2,21 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FaTriangleExclamation } from "react-icons/fa6";
 import axios from "axios";
-import { Asteroid } from "../interfaces/asteroid";
+import { getDate } from "../utils/calculate-dates";
+import { Asteroid, CloseApproachData } from "../interfaces/asteroid";
 
 import "./AsteroidPage.scss";
 
 const { VITE_API_BASE_URL } = import.meta.env;
 
 const AsteroidPage: React.FC = () => {
+  const dateToday = getDate(0).toISOString().slice(0, 10);
+  const dateInOneWeek = getDate(6).toISOString().slice(0, 10);
+
   const [asteroid, setAsteroid] = useState<Asteroid | undefined>();
+  const [closeApproach, setCloseApproach] = useState<
+    CloseApproachData | undefined
+  >();
 
   interface AsteroidPageParams {
     id: string;
@@ -33,6 +40,19 @@ const AsteroidPage: React.FC = () => {
     fetchAsteroid(id);
   }, []);
 
+  useEffect(() => {
+    const getCloseApproach = () => {
+      const data = asteroid?.close_approach_data.find(
+        (approach) =>
+          approach.close_approach_date >= dateToday &&
+          approach.close_approach_date <= dateInOneWeek
+      );
+      setCloseApproach(data);
+    };
+
+    if (asteroid) getCloseApproach();
+  }, [asteroid]);
+
   return (
     asteroid && (
       <main className="asteroid-page">
@@ -50,6 +70,19 @@ const AsteroidPage: React.FC = () => {
             <p className="asteroid-page__text">
               <span className="bold">Name</span>: {asteroid.name}
             </p>
+            {closeApproach && (
+              <>
+                <p className="asteroid-page__text">
+                  <span className="bold">Approach date</span>:{" "}
+                  {closeApproach.close_approach_date}
+                </p>
+                <p className="asteroid-page__text">
+                  <span className="bold">Approach distance</span>: <br />
+                  {(+closeApproach.miss_distance.kilometers / 1000000).toFixed(2)}{" "}
+                  million kilometers
+                </p>
+              </>
+            )}
             <p className="asteroid-page__text">
               <span className="bold">Maximum diameter</span>:
               <br />

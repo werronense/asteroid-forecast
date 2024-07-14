@@ -15,7 +15,7 @@ interface MissDistance {
     miles_per_hour: string;
   }
   
-  interface CloseApproachData {
+  export interface CloseApproachData {
     close_approach_date: string;
     close_approach_date_full: string;
     epoch_date_close_approach: number;
