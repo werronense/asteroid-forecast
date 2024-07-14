@@ -4,6 +4,7 @@ import { FaTriangleExclamation } from "react-icons/fa6";
 import axios from "axios";
 import { getDate } from "../utils/calculate-dates";
 import { formatMillionsOfKms } from "../utils/format-distances";
+import { getLongLocalDate, getShortLocalDate } from "../utils/format-dates";
 import { Asteroid, CloseApproachData } from "../interfaces/asteroid";
 import { Approaches } from "../components/Approaches";
 
@@ -99,8 +100,10 @@ const AsteroidPage: React.FC = () => {
             {closeApproach && (
               <>
                 <p className="asteroid-page__text">
-                  <span className="bold">Approach date</span>:{" "}
-                  {closeApproach.close_approach_date}
+                  <span className="bold">Approach date</span>:<br />
+                  {getLongLocalDate(
+                    new Date(closeApproach.close_approach_date)
+                  )}
                 </p>
                 <p className="asteroid-page__text">
                   <span className="bold">Approach distance</span>: <br />
@@ -120,7 +123,9 @@ const AsteroidPage: React.FC = () => {
               <>
                 <p className="asteroid-page__text">
                   <span className="bold">Discovered</span>:{" "}
-                  {asteroid.orbital_data.first_observation_date}
+                  {getShortLocalDate(
+                    new Date(asteroid.orbital_data.first_observation_date)
+                  )}
                 </p>
               </>
             )}

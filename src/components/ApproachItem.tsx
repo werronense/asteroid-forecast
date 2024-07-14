@@ -1,6 +1,7 @@
 import React from "react";
 import { CloseApproachData } from "../interfaces/asteroid";
 import { formatMillionsOfKms } from "../utils/format-distances";
+import { getShortLocalDate } from "../utils/format-dates";
 import "./ApproachItem.scss";
 
 interface ApproachItemProps {
@@ -12,7 +13,9 @@ export const ApproachItem: React.FC<ApproachItemProps> = ({ approach }) => {
 
   return (
     <li className="approach-item">
-      <h4 className="approach-item__heading">{approach.close_approach_date}</h4>
+      <h4 className="approach-item__heading">
+        {getShortLocalDate(new Date(approach.close_approach_date))}
+      </h4>
       <span className="bold">Approach distance</span>:<br />
       <span>{formatMillionsOfKms(kilometers)}</span>
     </li>
