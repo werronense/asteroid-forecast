@@ -63,6 +63,10 @@ const AsteroidPage: React.FC = () => {
       const data = asteroid?.close_approach_data.filter(
         (approach) => approach.close_approach_date < limit
       );
+
+      // sort dates in descending order
+      data?.sort((a, b) => a.close_approach_date < b.close_approach_date ? 1 : -1);
+      
       setPastApproaches(data);
     };
 
