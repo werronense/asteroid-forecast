@@ -1,8 +1,13 @@
+@use "../styles/partials/breakpoint-mixins" as *;
 @use "../styles/partials/block-theme-mixin" as *;
 
 .approaches {
   @include block-theme-light;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 1.5rem auto 2rem auto;
+  max-width: 400px;
+  padding: 0.25rem 1.25rem;
+
+  @include tablet {
+    margin-top: 3rem;
+  }
 }
