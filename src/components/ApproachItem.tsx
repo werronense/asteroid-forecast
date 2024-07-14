@@ -15,7 +15,7 @@ export const ApproachItem: React.FC<ApproachItemProps> = ({ approach }) => {
   return (
     <li className="approach-item">
       <h4 className="approach-item__heading">
-        <FaMeteor /> {getShortLocalDate(new Date(approach.close_approach_date))}
+        <FaMeteor /> {getShortLocalDate(new Date(approach.epoch_date_close_approach))}
       </h4>
       <span className="bold">Approach distance</span>:<br />
       <span>{formatMillionsOfKms(kilometers)}</span>

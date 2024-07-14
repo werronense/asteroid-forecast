@@ -4,7 +4,7 @@ import { FaTriangleExclamation, FaMeteor } from "react-icons/fa6";
 import axios from "axios";
 import { getDate } from "../utils/calculate-dates";
 import { formatMillionsOfKms } from "../utils/format-distances";
-import { getLongLocalDate, getShortLocalDate } from "../utils/format-dates";
+import { getLongLocalDate } from "../utils/format-dates";
 import { Asteroid, CloseApproachData } from "../interfaces/asteroid";
 import { Approaches } from "../components/Approaches";
 
@@ -65,8 +65,10 @@ const AsteroidPage: React.FC = () => {
       );
 
       // sort dates in descending order
-      data?.sort((a, b) => a.close_approach_date < b.close_approach_date ? 1 : -1);
-      
+      data?.sort((a, b) =>
+        a.close_approach_date < b.close_approach_date ? 1 : -1
+      );
+
       setPastApproaches(data);
     };
 
@@ -92,7 +94,9 @@ const AsteroidPage: React.FC = () => {
             <h1 className="asteroid-page__heading">
               {asteroid.designation || asteroid.name}
             </h1>
-            <h2 className="asteroid-page__sub-heading"><FaMeteor /> Asteroid Details</h2>
+            <h2 className="asteroid-page__sub-heading">
+              <FaMeteor /> Asteroid Details
+            </h2>
             {asteroid.is_potentially_hazardous_asteroid && (
               <p className="asteroid-page__text asteroid-page__text--danger">
                 <FaTriangleExclamation /> Potentially hazardous
@@ -106,7 +110,7 @@ const AsteroidPage: React.FC = () => {
                 <p className="asteroid-page__text">
                   <span className="bold">Approach date</span>:<br />
                   {getLongLocalDate(
-                    new Date(closeApproach.close_approach_date)
+                    new Date(closeApproach.epoch_date_close_approach)
                   )}
                 </p>
                 <p className="asteroid-page__text">
@@ -127,9 +131,7 @@ const AsteroidPage: React.FC = () => {
               <>
                 <p className="asteroid-page__text">
                   <span className="bold">Discovered</span>:{" "}
-                  {getShortLocalDate(
-                    new Date(asteroid.orbital_data.first_observation_date)
-                  )}
+                  {asteroid.orbital_data.first_observation_date.slice(0, 4)}
                 </p>
               </>
             )}
