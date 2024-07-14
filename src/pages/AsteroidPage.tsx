@@ -4,6 +4,7 @@ import { FaTriangleExclamation } from "react-icons/fa6";
 import axios from "axios";
 import { getDate } from "../utils/calculate-dates";
 import { Asteroid, CloseApproachData } from "../interfaces/asteroid";
+import { Approaches } from "../components/Approaches";
 
 import "./AsteroidPage.scss";
 
@@ -16,6 +17,12 @@ const AsteroidPage: React.FC = () => {
   const [asteroid, setAsteroid] = useState<Asteroid | undefined>();
   const [closeApproach, setCloseApproach] = useState<
     CloseApproachData | undefined
+  >();
+  const [pastApproaches, setPastApproaches] = useState<
+    CloseApproachData[] | undefined
+  >();
+  const [futureApproaches, setFutureApproaches] = useState<
+    CloseApproachData[] | undefined
   >();
 
   interface AsteroidPageParams {
@@ -50,7 +57,25 @@ const AsteroidPage: React.FC = () => {
       setCloseApproach(data);
     };
 
-    if (asteroid) getCloseApproach();
+    const getPastApproaches = (limit: string) => {
+      const data = asteroid?.close_approach_data.filter(
+        (approach) => approach.close_approach_date < limit
+      );
+      setPastApproaches(data);
+    };
+
+    const getFutureApproaches = (limit: string) => {
+      const data = asteroid?.close_approach_data.filter(
+        (approach) => approach.close_approach_date > limit
+      );
+      setFutureApproaches(data);
+    };
+
+    if (asteroid) {
+      getCloseApproach();
+      getPastApproaches(dateToday);
+      getFutureApproaches(dateInOneWeek);
+    }
   }, [asteroid]);
 
   return (
@@ -78,7 +103,9 @@ const AsteroidPage: React.FC = () => {
                 </p>
                 <p className="asteroid-page__text">
                   <span className="bold">Approach distance</span>: <br />
-                  {(+closeApproach.miss_distance.kilometers / 1000000).toFixed(2)}{" "}
+                  {(+closeApproach.miss_distance.kilometers / 1000000).toFixed(
+                    2
+                  )}{" "}
                   million kilometers
                 </p>
               </>
@@ -100,6 +127,18 @@ const AsteroidPage: React.FC = () => {
               </>
             )}
           </div>
+          {pastApproaches && (
+            <Approaches
+              heading="Past Approaches"
+              approachData={pastApproaches}
+            />
+          )}
+          {futureApproaches && (
+            <Approaches
+              heading="Future Approaches"
+              approachData={futureApproaches}
+            />
+          )}
         </div>
       </main>
     )
