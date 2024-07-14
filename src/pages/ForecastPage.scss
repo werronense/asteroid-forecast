@@ -32,7 +32,7 @@
   }
 
   &__sub-heading {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -49,15 +49,6 @@
 
     &--danger {
       font-weight: 700;
-    }
-  }
-
-  &__week {
-    max-width: 400px;
-    margin: 0 auto;
-
-    @include tablet {
-      margin: 2rem auto 0 auto;
     }
   }
 }

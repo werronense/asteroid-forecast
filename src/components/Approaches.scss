@@ -1,0 +1,27 @@
+@use "../styles/partials/breakpoint-mixins" as *;
+@use "../styles/partials/block-theme-mixin" as *;
+@use "../styles/partials/flex-mixin" as *;
+
+.approaches {
+  @include block-theme-light;
+  margin: 1.5rem auto 2rem auto;
+  max-width: 400px;
+  padding: 0.25rem 1.25rem;
+
+  @include tablet {
+    margin-top: 3rem;
+  }
+
+  &__group {
+    @include flex($justify: space-between, $align: flex-end);
+  }
+
+  &__heading {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__btn-container {
+    padding-bottom: 0.5rem;
+  }
+}
