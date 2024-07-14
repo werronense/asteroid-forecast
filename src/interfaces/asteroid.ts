@@ -1,3 +1,5 @@
+import { OrbitalData } from "./orbital-data";
+
 // definition of the asteroid object returned from the API
 
 interface MissDistance {
@@ -13,7 +15,7 @@ interface MissDistance {
     miles_per_hour: string;
   }
   
-  interface CloseApproachData {
+  export interface CloseApproachData {
     close_approach_date: string;
     close_approach_date_full: string;
     epoch_date_close_approach: number;
@@ -45,4 +47,6 @@ interface MissDistance {
     name: string;
     nasa_jpl_url: string;
     neo_reference_id: string;
+    designation?: string;
+    orbital_data?: OrbitalData;
   }
