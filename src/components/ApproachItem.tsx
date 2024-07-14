@@ -1,4 +1,5 @@
 import React from "react";
+import { FaMeteor } from "react-icons/fa";
 import { CloseApproachData } from "../interfaces/asteroid";
 import { formatMillionsOfKms } from "../utils/format-distances";
 import { getShortLocalDate } from "../utils/format-dates";
@@ -14,7 +15,7 @@ export const ApproachItem: React.FC<ApproachItemProps> = ({ approach }) => {
   return (
     <li className="approach-item">
       <h4 className="approach-item__heading">
-        {getShortLocalDate(new Date(approach.close_approach_date))}
+        <FaMeteor /> {getShortLocalDate(new Date(approach.close_approach_date))}
       </h4>
       <span className="bold">Approach distance</span>:<br />
       <span>{formatMillionsOfKms(kilometers)}</span>

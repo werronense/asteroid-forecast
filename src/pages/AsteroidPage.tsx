@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { FaTriangleExclamation } from "react-icons/fa6";
+import { FaTriangleExclamation, FaMeteor } from "react-icons/fa6";
 import axios from "axios";
 import { getDate } from "../utils/calculate-dates";
 import { formatMillionsOfKms } from "../utils/format-distances";
@@ -88,7 +88,7 @@ const AsteroidPage: React.FC = () => {
             <h1 className="asteroid-page__heading">
               {asteroid.designation || asteroid.name}
             </h1>
-            <h2 className="asteroid-page__sub-heading">Asteroid Details</h2>
+            <h2 className="asteroid-page__sub-heading"><FaMeteor /> Asteroid Details</h2>
             {asteroid.is_potentially_hazardous_asteroid && (
               <p className="asteroid-page__text asteroid-page__text--danger">
                 <FaTriangleExclamation /> Potentially hazardous
