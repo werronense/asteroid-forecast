@@ -1,5 +1,6 @@
 @use "../styles/partials/breakpoint-mixins" as *;
 @use "../styles/partials/block-theme-mixin" as *;
+@use "../styles/partials/flex-mixin" as *;
 
 .approaches {
   @include block-theme-light;
@@ -9,5 +10,17 @@
 
   @include tablet {
     margin-top: 3rem;
+  }
+
+  &__group {
+    @include flex($justify: space-between, $align: flex-end);
+  }
+
+  &__heading {
+    margin-bottom: 0.5rem;
+  }
+
+  &__btn-container {
+    padding-bottom: 0.25rem;
   }
 }
