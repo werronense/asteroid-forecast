@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import ForecastPage, { DailyForecast } from "./pages/ForecastPage";
 import AsteroidPage from "./pages/AsteroidPage";
 import ErrorPage from "./pages/ErrorPage";
+import { Footer } from "./components/Footer";
 
 const { VITE_API_BASE_URL } = import.meta.env;
 
@@ -47,6 +48,7 @@ const App: React.FC = () => {
           element={<ErrorPage errorCode={404} errorMessage="Page not found" />}
         />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
