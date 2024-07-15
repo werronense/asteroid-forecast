@@ -1,6 +1,8 @@
 @use "../styles/partials/variables" as *;
+@use "../styles/partials/fade-in-mixin" as *;
 
 .approach-list {
+  animation: fade-in 1s;
   border-top: 1px solid $black;
   list-style: none;
   margin: 1rem 0 0;

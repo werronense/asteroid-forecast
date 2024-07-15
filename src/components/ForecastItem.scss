@@ -1,8 +1,10 @@
 @use "../styles/partials/variables" as *;
 @use "../styles/partials/breakpoint-mixins" as *;
 @use "../styles/partials/flex-mixin" as *;
+@use "../styles/partials/fade-in-mixin" as *;
 
 .forecast-item {
+  animation: fade-in 1s;
   margin-bottom: 2rem;
 
   &__heading {
@@ -41,7 +43,7 @@
   }
 
   &__list {
-    transition: all 2s;
+    animation: fade-in 1s;
 
     &--closed {
       display: none;
