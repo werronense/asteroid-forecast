@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "./flex-mixin" as *;
 
 // Global resets
 * {
@@ -66,4 +67,10 @@ h1 {
 // background
 body {
   background-color: $black;
+}
+
+// page layout
+#root {
+  @include flex($direction: column, $justify: space-between);
+  height: 100vh;
 }
