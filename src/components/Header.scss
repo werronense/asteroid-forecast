@@ -15,16 +15,13 @@
 
     @include tablet {
       margin: 0 auto;
-      max-width: $medium-container-max-width;
-    }
-
-    @include desktop {
-      max-width: $large-container-max-width;
+      max-width: 425px;
     }
   }
 
   &__logo {
     max-width: 3.5rem;
+    cursor: pointer;
   }
 
   &__heading {

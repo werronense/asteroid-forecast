@@ -1,0 +1,39 @@
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/breakpoint-mixins" as *;
+@use "../styles/partials/flex-mixin" as *;
+
+.site-footer {
+  color: $white;
+  padding-bottom: 2rem;
+  margin-top: 2rem;
+
+  &__container {
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 0 1.5rem;
+
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__copyright {
+    margin-bottom: 1.75rem;
+  }
+
+  &__link-group {
+    @include flex($direction: column);
+    gap: 1rem;
+  }
+
+  &__text {
+    font-size: 1rem;
+  }
+
+  &__link {
+    @include flex($align: baseline);
+    color: $white;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+}

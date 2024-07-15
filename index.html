@@ -1,10 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asteroid Forecast</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Z6P4KTSYZR"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-Z6P4KTSYZR");
+    </script>
+    <meta property="og:title" content="Asteroid Forecast" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://asteroid-forecast.netlify.app/" />
+    <meta property="og:image" content="/asteroid-forecast.png" />
   </head>
   <body>
     <div id="root"></div>
