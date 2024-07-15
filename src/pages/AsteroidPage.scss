@@ -2,6 +2,7 @@
 @use "../styles/partials/breakpoint-mixins" as *;
 @use "../styles/partials/container-mixin" as *;
 @use "../styles/partials/block-theme-mixin" as *;
+@use "../styles/partials/fade-in-mixin" as *;
 
 .asteroid-page {
   padding: 0 $small-pad;
@@ -12,6 +13,7 @@
 
   &__summary {
     @include block-theme-light;
+    animation: fade-in 1s;
     margin: 1.5rem auto 2rem auto;
     max-width: 400px;
     padding: 0.25rem 1.25rem;
