@@ -41,7 +41,7 @@ const App: React.FC = () => {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<ForecastPage forecast={forecast} />} />
+        <Route path="/" element={forecast.length > 0 && <ForecastPage forecast={forecast} />} />
         <Route path="/asteroids/:id" element={<AsteroidPage />} />
         <Route
           path="*"
