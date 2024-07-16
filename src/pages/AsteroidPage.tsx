@@ -98,9 +98,16 @@ const AsteroidPage: React.FC = () => {
               <FaMeteor /> Asteroid Details
             </h2>
             {asteroid.is_potentially_hazardous_asteroid && (
-              <p className="asteroid-page__text asteroid-page__text--danger">
-                <FaTriangleExclamation /> Potentially hazardous
-              </p>
+              <>
+                <div className="asteroid-page__danger">
+                  <p className="asteroid-page__text asteroid-page__text--danger">
+                    <FaTriangleExclamation /> Potentially hazardous:
+                  </p>
+                  <p className="asteroid-page__text asteroid-page__text--danger">
+                    This asteroid is large and close!
+                  </p>
+                </div>
+              </>
             )}
             <p className="asteroid-page__text">
               <span className="bold">Name</span>: {asteroid.name}
@@ -108,13 +115,13 @@ const AsteroidPage: React.FC = () => {
             {closeApproach && (
               <>
                 <p className="asteroid-page__text">
-                  <span className="bold">Approach date</span>:<br />
+                  <span className="bold">Near approach date</span>:<br />
                   {getLongLocalDate(
                     new Date(closeApproach.epoch_date_close_approach)
                   )}
                 </p>
                 <p className="asteroid-page__text">
-                  <span className="bold">Approach distance</span>: <br />
+                  <span className="bold">Near approach distance</span>: <br />
                   {formatMillionsOfKms(closeApproach.miss_distance.kilometers)}
                 </p>
               </>
@@ -130,7 +137,7 @@ const AsteroidPage: React.FC = () => {
             {asteroid.orbital_data && (
               <>
                 <p className="asteroid-page__text">
-                  <span className="bold">Discovered</span>:{" "}
+                  <span className="bold">Year discovered</span>:{" "}
                   {asteroid.orbital_data.first_observation_date.slice(0, 4)}
                 </p>
               </>
@@ -138,13 +145,13 @@ const AsteroidPage: React.FC = () => {
           </div>
           {pastApproaches && (
             <Approaches
-              heading="Past Approaches"
+              heading="Past Near Approaches"
               approachData={pastApproaches}
             />
           )}
           {futureApproaches && (
             <Approaches
-              heading="Future Approaches"
+              heading="Future Near Approaches"
               approachData={futureApproaches}
             />
           )}
