@@ -17,15 +17,22 @@ const AsteroidPage: React.FC = () => {
   const dateInOneWeek = getDate(6).toISOString().slice(0, 10);
 
   const [asteroid, setAsteroid] = useState<Asteroid | undefined>();
-  const [closeApproach, setCloseApproach] = useState<
-    CloseApproachData | undefined
-  >();
-  const [pastApproaches, setPastApproaches] = useState<
-    CloseApproachData[] | undefined
-  >();
-  const [futureApproaches, setFutureApproaches] = useState<
-    CloseApproachData[] | undefined
-  >();
+
+  const closeApproach: CloseApproachData | undefined = asteroid?.close_approach_data.find(
+    (approach) =>
+      approach.close_approach_date >= dateToday &&
+      approach.close_approach_date <= dateInOneWeek
+  );
+
+  const pastApproaches: CloseApproachData[] | undefined = asteroid?.close_approach_data.filter(
+    (approach) => approach.close_approach_date < dateToday
+  ).sort((a, b) =>
+    a.close_approach_date < b.close_approach_date ? 1 : -1
+  );
+
+  const futureApproaches: CloseApproachData[] | undefined = asteroid?.close_approach_data.filter(
+    (approach) => approach.close_approach_date > dateInOneWeek
+  );
 
   interface AsteroidPageParams {
     id: string;
@@ -48,43 +55,6 @@ const AsteroidPage: React.FC = () => {
 
     fetchAsteroid(id);
   }, []);
-
-  useEffect(() => {
-    const getCloseApproach = () => {
-      const data = asteroid?.close_approach_data.find(
-        (approach) =>
-          approach.close_approach_date >= dateToday &&
-          approach.close_approach_date <= dateInOneWeek
-      );
-      setCloseApproach(data);
-    };
-
-    const getPastApproaches = (limit: string) => {
-      const data = asteroid?.close_approach_data.filter(
-        (approach) => approach.close_approach_date < limit
-      );
-
-      // sort dates in descending order
-      data?.sort((a, b) =>
-        a.close_approach_date < b.close_approach_date ? 1 : -1
-      );
-
-      setPastApproaches(data);
-    };
-
-    const getFutureApproaches = (limit: string) => {
-      const data = asteroid?.close_approach_data.filter(
-        (approach) => approach.close_approach_date > limit
-      );
-      setFutureApproaches(data);
-    };
-
-    if (asteroid) {
-      getCloseApproach();
-      getPastApproaches(dateToday);
-      getFutureApproaches(dateInOneWeek);
-    }
-  }, [asteroid]);
 
   return (
     asteroid && (
