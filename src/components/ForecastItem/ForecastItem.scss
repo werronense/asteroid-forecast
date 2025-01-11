@@ -1,7 +1,7 @@
-@use "../styles/partials/variables" as *;
-@use "../styles/partials/breakpoint-mixins" as *;
-@use "../styles/partials/flex-mixin" as *;
-@use "../styles/partials/fade-in-mixin" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoint-mixins" as *;
+@use "../../styles/partials/flex-mixin" as *;
+@use "../../styles/partials/fade-in-mixin" as *;
 
 .forecast-item {
   animation: fade-in 1s;

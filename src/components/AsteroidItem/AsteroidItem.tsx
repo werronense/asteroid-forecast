@@ -1,4 +1,4 @@
-import { Asteroid } from "../interfaces/asteroid";
+import { Asteroid } from "../../interfaces/asteroid.ts";
 import { Link } from "react-router-dom";
 import {
   FaMeteor,

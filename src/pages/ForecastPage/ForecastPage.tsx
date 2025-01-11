@@ -1,8 +1,8 @@
 import React from "react";
 import "./ForecastPage.scss";
-import { getDate } from "../utils/calculate-dates";
-import { Asteroid } from "../interfaces/asteroid";
-import { ForecastList } from "../components/ForecastList";
+import { getDate } from "../../utils/calculate-dates";
+import { Asteroid } from "../../interfaces/asteroid";
+import { ForecastList } from "../../components/ForecastList/ForecastList.tsx";
 
 // contract interface exported for use in App.tsx
 export interface DailyForecast {

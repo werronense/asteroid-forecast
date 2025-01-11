@@ -1,7 +1,7 @@
-@use "../styles/partials/breakpoint-mixins" as *;
-@use "../styles/partials/variables" as *;
-@use "../styles/partials/container-mixin" as *;
-@use "../styles/partials/fade-in-mixin" as *;
+@use "../../styles/partials/breakpoint-mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/container-mixin" as *;
+@use "../../styles/partials/fade-in-mixin" as *;
 
 .forecast {
   padding: 0 $small-pad;

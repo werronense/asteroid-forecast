@@ -4,11 +4,11 @@ import axios from "axios";
 
 import "./App.scss";
 
-import Header from "./components/Header";
-import ForecastPage, { DailyForecast } from "./pages/ForecastPage";
-import AsteroidPage from "./pages/AsteroidPage";
-import ErrorPage from "./pages/ErrorPage";
-import { Footer } from "./components/Footer";
+import Header from "./components/Header/Header.tsx";
+import ForecastPage, { DailyForecast } from "./pages/ForecastPage/ForecastPage";
+import AsteroidPage from "./pages/AsteroidPage/AsteroidPage";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import Footer from "./components/Footer/Footer";
 
 const { VITE_API_BASE_URL } = import.meta.env;
 
