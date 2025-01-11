@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { CloseApproachData } from "../interfaces/asteroid";
-import { DisplayBtn } from "./DisplayBtn";
+import { CloseApproachData } from "../../interfaces/asteroid.ts";
+import { DisplayBtn } from "../DisplayButton/DisplayBtn.tsx";
 import "./Approaches.scss";
 
-import { ApproachList } from "./ApproachList";
+import { ApproachList } from "../ApproachList/ApproachList.tsx";
 
 interface ApproachesProps {
   heading: string;

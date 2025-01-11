@@ -1,6 +1,6 @@
 import React from "react";
-import { CloseApproachData } from "../interfaces/asteroid";
-import { ApproachItem } from "./ApproachItem";
+import { CloseApproachData } from "../../interfaces/asteroid.ts";
+import { ApproachItem } from "../ApproachItem/ApproachItem.tsx";
 import "./ApproachList.scss";
 
 interface ApproachListProps {

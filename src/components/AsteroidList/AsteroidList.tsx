@@ -1,5 +1,5 @@
-import { Asteroid } from "../interfaces/asteroid";
-import { AsteroidItem } from "./AsteroidItem";
+import { Asteroid } from "../../interfaces/asteroid.ts";
+import { AsteroidItem } from "../AsteroidItem/AsteroidItem.tsx";
 import "./AsteroidList.scss";
 
 interface AsteroidListProps {

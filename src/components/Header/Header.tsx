@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import asteroidLogo from "../assets/images/asteroid-logo.png";
+import asteroidLogo from "../../assets/images/asteroid-logo.png";
 
 import "./Header.scss";
 

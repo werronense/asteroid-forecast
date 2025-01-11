@@ -1,7 +1,7 @@
 import "./ForecastList.scss";
-import { daysToMilliseconds, getDate } from "../utils/calculate-dates";
+import { daysToMilliseconds, getDate } from "../../utils/calculate-dates.ts";
 import { DailyForecast } from "../pages/ForecastPage";
-import { ForecastItem } from "./ForecastItem";
+import { ForecastItem } from "../ForecastItem/ForecastItem.tsx";
 
 interface ForecastListProps {
   forecast: DailyForecast[];

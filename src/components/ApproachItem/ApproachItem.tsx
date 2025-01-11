@@ -1,8 +1,8 @@
 import React from "react";
 import { FaMeteor } from "react-icons/fa";
-import { CloseApproachData } from "../interfaces/asteroid";
-import { formatMillionsOfKms } from "../utils/format-distances";
-import { getShortLocalDate } from "../utils/format-dates";
+import { CloseApproachData } from "../../interfaces/asteroid.ts";
+import { formatMillionsOfKms } from "../../utils/format-distances.ts";
+import { getShortLocalDate } from "../../utils/format-dates.ts";
 import "./ApproachItem.scss";
 
 interface ApproachItemProps {

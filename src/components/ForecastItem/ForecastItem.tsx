@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { DisplayBtn } from "./DisplayBtn";
-import { Asteroid } from "../interfaces/asteroid";
-import { AsteroidList } from "./AsteroidList";
+import { DisplayBtn } from "../DisplayButton/DisplayBtn.tsx";
+import { Asteroid } from "../../interfaces/asteroid.ts";
+import { AsteroidList } from "../AsteroidList/AsteroidList.tsx";
 import "./ForecastItem.scss";
 
 interface ForecastItemProps {

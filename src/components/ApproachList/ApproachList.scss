@@ -1,5 +1,5 @@
-@use "../styles/partials/variables" as *;
-@use "../styles/partials/fade-in-mixin" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fade-in-mixin" as *;
 
 .approach-list {
   animation: fade-in 1s;

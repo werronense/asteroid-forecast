@@ -1,8 +1,8 @@
-@use "../styles/partials/variables" as *;
-@use "../styles/partials/breakpoint-mixins" as *;
-@use "../styles/partials/container-mixin" as *;
-@use "../styles/partials/block-theme-mixin" as *;
-@use "../styles/partials/fade-in-mixin" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoint-mixins" as *;
+@use "../../styles/partials/container-mixin" as *;
+@use "../../styles/partials/block-theme-mixin" as *;
+@use "../../styles/partials/fade-in-mixin" as *;
 
 .asteroid-page {
   padding: 0 $small-pad;
