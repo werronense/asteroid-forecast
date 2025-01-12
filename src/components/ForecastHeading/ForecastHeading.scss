@@ -1,0 +1,17 @@
+@use "../../styles/partials/breakpoint-mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.forecast-heading {
+  &__header {
+    margin: $small-margin 0;
+
+    @include tablet {
+      margin: $med-margin 0;
+    }
+  }
+
+  &__date-range {
+    font-weight: 500;
+    margin: 0;
+  }
+}

@@ -4,8 +4,9 @@ import axios from "axios";
 
 import "./App.scss";
 
+import { DailyForecast } from "./interfaces/forecast.ts";
 import Header from "./components/Header/Header.tsx";
-import ForecastPage, { DailyForecast } from "./pages/ForecastPage/ForecastPage";
+import ForecastPage from "./pages/ForecastPage/ForecastPage";
 import AsteroidPage from "./pages/AsteroidPage/AsteroidPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import Footer from "./components/Footer/Footer";
@@ -41,7 +42,10 @@ const App: React.FC = () => {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={forecast.length > 0 && <ForecastPage forecast={forecast} />} />
+        <Route
+          path="/"
+          element={forecast.length > 0 && <ForecastPage forecast={forecast} />}
+        />
         <Route path="/asteroids/:id" element={<AsteroidPage />} />
         <Route
           path="*"

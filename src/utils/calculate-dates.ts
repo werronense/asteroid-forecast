@@ -6,4 +6,8 @@ const getDate = (daysFromToday: number): Date => {
   return new Date(Date.now() + daysToMilliseconds(daysFromToday));
 };
 
-export { daysToMilliseconds, getDate };
+const getDateRange = (rangeLength: number) => {
+  return [getDate(0), getDate(rangeLength - 1)];
+};
+
+export { daysToMilliseconds, getDate, getDateRange };
