@@ -19,22 +19,22 @@ const ForecastPage: React.FC<ForecastProps> = ({ forecast }) => {
   // create an array of all asteroids
   const allAsteroids = forecast.reduce(
     (a, b) => a.concat(b.asteroids),
-    [] as Asteroid[]
+    [] as Asteroid[],
   );
 
   // create an array of all hazardouds asteroids
   const hazardousAsteroids = allAsteroids.filter(
-    (asteroid) => asteroid.is_potentially_hazardous_asteroid === true
+    (asteroid) => asteroid.is_potentially_hazardous_asteroid === true,
   );
 
   return (
-    <main className="forecast">
+    <main className="forecast" data-testid="forecast">
       <div className="forecast__container">
-        <div className="forecast__summary">
+        <div className="forecast__summary" data-testid="forecast-summary">
           <h1 className="forecast__heading">Forecast</h1>
           <p className="forecast__date-range">
             {`${getDate(0).toLocaleDateString()} - ${getDate(
-              6
+              6,
             ).toLocaleDateString()}`}
           </p>
           <h2 className="forecast__sub-heading">Summary</h2>

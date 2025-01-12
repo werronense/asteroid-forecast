@@ -9,7 +9,7 @@ interface ForecastListProps {
 
 export const ForecastList: React.FC<ForecastListProps> = ({ forecast }) => {
   return (
-    <div className="forecast-list">
+    <div className="forecast-list" data-testid="forecast-list">
       {forecast?.map((day, i) => (
         <ForecastItem
           key={daysToMilliseconds(i)}
