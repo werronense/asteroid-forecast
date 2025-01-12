@@ -4,14 +4,14 @@ import "./Footer.scss";
 
 const Footer = () => {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" data-testid="footer">
       <div className="site-footer__container">
-        <div className="site-footer__copyright">
+        <div className="site-footer__copyright" data-testid="copyright">
           <small className="site-footer__text">
             &copy; Stephen Werronen {new Date(Date.now()).getFullYear()}
           </small>
         </div>
-        <div className="site-footer__link-group">
+        <div className="site-footer__link-group" data-testid="footer-links">
           <small className="site-footer__text">
             <a
               href="https://werronense.github.io/"
@@ -45,4 +45,4 @@ const Footer = () => {
   );
 };
 
-export default Footer
+export default Footer;
