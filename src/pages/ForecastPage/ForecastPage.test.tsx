@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import ForecastPage from "./ForecastPage.tsx";
-import { DailyForecast } from "./ForecastPage.tsx";
+import { DailyForecast } from "../../interfaces/forecast.ts";
 
 const testForecast: DailyForecast[] = [];
 

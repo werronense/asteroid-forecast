@@ -1,3 +1,5 @@
+import { getDateRange } from "./calculate-dates.ts";
+
 export const getLongLocalDate = (date: Date): string => {
   // must declare type of options to use options object in toLocaleDateString
   const options: Intl.DateTimeFormatOptions = {
@@ -18,4 +20,8 @@ export const getShortLocalDate = (date: Date): string => {
   };
 
   return date.toLocaleDateString(undefined, options);
+};
+
+export const getFormattedDateRange = (rangeLength: number) => {
+  return getDateRange(rangeLength).map((date) => date.toLocaleDateString());
 };
