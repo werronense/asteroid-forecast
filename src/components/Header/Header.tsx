@@ -1,21 +1,20 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import asteroidLogo from "../../assets/images/asteroid-logo.png";
 
 import "./Header.scss";
 
 const Header: React.FC = () => {
-  const navigate = useNavigate();
-
   return (
-    <header className="site-header">
+    <header className="site-header" data-testid="header">
       <div className="site-header__content-container">
-        <img
-          src={asteroidLogo}
-          alt="asteroid forecast logo"
-          className="site-header__logo"
-          onClick={() => navigate("/")}
-        />
+        <Link to="/">
+          <img
+            src={asteroidLogo}
+            alt="asteroid forecast logo"
+            className="site-header__logo"
+          />
+        </Link>
         <h2 className="site-header__heading">
           <Link to="/" className="site-header__link">
             Asteroid Forecast
